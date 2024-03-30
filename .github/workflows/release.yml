@@ -38,6 +38,5 @@ jobs:
           bin: sysdep
           # (optional) Target triple, default is host triple.
           target: ${{ matrix.target }}
-          tar: none
           # (required) GitHub token for uploading assets to GitHub Releases.
           token: ${{ secrets.GITHUB_TOKEN }}
