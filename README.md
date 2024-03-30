@@ -9,6 +9,22 @@ A simple system dependency tool to list/install the apt/pip dependencies based o
 - Option to specify **large** dependencies that take time to install, which is useful for caching.
 - Suitable for [monorepo and multirepo](https://medium.com/@magenta2127/monorepo-vs-multi-repo-vs-monolith-7c4a5f476009).
 
+## Install
+
+### ~/local/bin
+
+Ensure directory exists, and `PATH=~/.local/bin:$PATH`
+
+`curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | tar -xz -C ~/.local/bin`
+
+### /usr/local/bin
+
+`curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | sudo tar -xz -C /usr/local/bin`
+
+### Latest version
+
+`curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/latest/sysdep-$(arch)-unknown-linux-gnu.tar.gz | sudo tar -xz -C /usr/local/bin`
+
 ## Usage
 
 ```bash
