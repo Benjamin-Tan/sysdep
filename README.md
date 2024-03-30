@@ -11,19 +11,17 @@ A simple system dependency tool to list/install the apt/pip dependencies based o
 
 ## Install
 
-### ~/local/bin
+```bash
+# To install to `~/local/bin`, ensure directory exists and `PATH=~/.local/bin:$PATH`
+# For latest version
+curl -L https://github.com/Benjamin-Tan/sysdep/releases/latest/download/sysdep-$(arch)-unknown-linux-gnu.tar.gz | tar -xz -C ~/.local/bin
 
-Ensure directory exists, and `PATH=~/.local/bin:$PATH`
+# For specific version,
+curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | tar -xz -C ~/.local/bin
 
-`curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | tar -xz -C ~/.local/bin`
-
-### /usr/local/bin
-
-`curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | sudo tar -xz -C /usr/local/bin`
-
-### Latest version
-
-`curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/latest/sysdep-$(arch)-unknown-linux-gnu.tar.gz | sudo tar -xz -C /usr/local/bin`
+# To install to `/usr/local/bin`
+curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | sudo tar -xz -C /usr/local/bin
+```
 
 ## Usage
 
