@@ -14,3 +14,7 @@ toml = "0.8.11"
 [dev-dependencies]
 assert_cmd = "2.0.14"
 predicates = "3.1.0"
+
+[profile.release]
+lto = true
+strip = true
