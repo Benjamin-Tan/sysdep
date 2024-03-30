@@ -1,0 +1,21 @@
+name = "custom_name" # To override the default inferred from the parent folder name
+
+[dependencies]
+apt = ["e2apt1", "e2apt2", "e2apt3"]
+pip = ["e2pip1", "e2pip2"]
+
+[large-dependencies]
+apt = ["e2apt1-large", "e2apt2-large"]
+pip = ["2epip1-large", "e2pip2-large"]
+
+[target.aarch64-unknown-linux-gnu.dependencies]
+apt = ["e2-aarch64-apt"]
+
+[target.aarch64-unknown-linux-gnu.large-dependencies]
+apt = ["e2-aarch64-apt-large"]
+
+[target.x86_64-unknown-linux-gnu.dependencies]
+apt = ["e2-x86-apt"]
+
+[target.x86_64-unknown-linux-gnu.large-dependencies]
+apt = ["e2-x86-apt-large"]

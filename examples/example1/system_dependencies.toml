@@ -1,0 +1,13 @@
+[dependencies]
+apt = ["liba", "libc", "libd"]
+pip = ["libc", "libd"]
+
+[large-dependencies]
+apt = ["liba", "libd"]
+pip = ["libcc", "libccd"]
+
+[target.aarch64-unknown-linux-gnu.dependencies]
+apt = ["winhttp=0.4.0"]
+
+[target.x86_64-unknown-linux-gnu.dependencies]
+apt = ["openssl=1.0.1"]
