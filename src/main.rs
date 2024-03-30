@@ -13,8 +13,9 @@ use std::process::Stdio;
 #[command(name = "sysdep")]
 #[command(version = "0.1.0")]
 #[command(about = "A simple system dependency tool to list/install the apt/pip dependencies", long_about = None)]
+#[command(arg_required_else_help = true)]
 struct Cli {
-    #[arg(value_enum, default_value_t=CliCommand::List)]
+    #[arg(value_enum)]
     command: CliCommand,
     /// Please include the path with the quote, e.g. './**/'
     #[arg(default_value = ".")]
