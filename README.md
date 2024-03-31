@@ -17,10 +17,10 @@ A simple system dependency tool to list/install the apt/pip dependencies based o
 curl -L https://github.com/Benjamin-Tan/sysdep/releases/latest/download/sysdep-$(arch)-unknown-linux-gnu.tar.gz | tar -xz -C ~/.local/bin
 
 # For specific version,
-curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | tar -xz -C ~/.local/bin
+curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.2.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | tar -xz -C ~/.local/bin
 
 # To install to `/usr/local/bin`
-curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | sudo tar -xz -C /usr/local/bin
+curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.2.0/sysdep-$(arch)-unknown-linux-gnu.tar.gz | sudo tar -xz -C /usr/local/bin
 ```
 
 ## Usage
@@ -29,19 +29,26 @@ curl -L https://github.com/Benjamin-Tan/sysdep/releases/download/v0.1.0/sysdep-$
 # List the dependencies of the current directory
 sysdep list
 
-# List the dependencies in './**/'
-sysdep list './**/'
+# List the dependencies in all subdirectories recursively '**'
+sysdep list '**'
 
-# Install the dependencies
-sysdep install './**/'
+# List the dependencies in all subdirectories recursively, with matching name 'example1' or 'example2' only.
+sysdep list '**/{example1,example2}'
+
+# Install the dependencies in all subdirectories recursively
+sysdep install '**'
 
 # Only list the pip dependencies
-sysdep list './**/' pip
+sysdep list '**' pip
 
 # Only list the apt dependencies
-sysdep list './**/' apt
+sysdep list '**' apt
+
+# Only list the large apt dependencies
+sysdep list '**' apt --large-dep
 
 # For more options
+sysdep
 sysdep --help
 ```
 

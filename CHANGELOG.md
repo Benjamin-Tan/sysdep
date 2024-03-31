@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - ...
 
+## [0.2.0] - 2024-03-31
+
+### Changed
+
+- Allow to use "**/{example1,example2}" as the search directory.
+
 ## [0.1.0] - 2024-03-30
 
 ### Added

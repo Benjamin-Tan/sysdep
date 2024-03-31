@@ -1,5 +1,5 @@
 use clap::{Parser, ValueEnum};
-use glob::glob;
+use globwalk::glob;
 use serde::Deserialize;
 use std::fs;
 use std::io::BufRead;
@@ -11,13 +11,13 @@ use std::process::Stdio;
 
 #[derive(Parser)]
 #[command(name = "sysdep")]
-#[command(version = "0.1.0")]
+#[command(version = "0.2.0")]
 #[command(about = "A simple system dependency tool to list/install the apt/pip dependencies", long_about = None)]
 #[command(arg_required_else_help = true)]
 struct Cli {
     #[arg(value_enum)]
     command: CliCommand,
-    /// Please include the path with the quote, e.g. './**/'
+    /// Please include the path with the quote, e.g. '**'
     #[arg(default_value = ".")]
     search_directory: PathBuf,
     #[arg(value_enum, default_value_t=DependencyType::Both)]
@@ -160,7 +160,7 @@ fn main() -> Result<(), String> {
     for entry in glob(glob_paths.to_str().unwrap()).expect("Failed to read glob pattern") {
         match entry {
             Ok(path) => {
-                let absolute_path = fs::canonicalize(path).expect("Able to get absolute path");
+                let absolute_path = path.path().canonicalize().expect("Able to get absolute path");
                 let package_name = absolute_path
                     .parent()
                     .expect("A parent directory is available")
